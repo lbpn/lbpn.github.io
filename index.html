@@ -3,94 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBPN - Desenvolvedor de Apps</title>
+    <title>LBPN - Calculadora de Combustível</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f4f8;
             color: #333;
-            text-align: center;
+            line-height: 1.6;
         }
         header {
-            background-color: #1e88e5;
+            background: linear-gradient(135deg, #1e88e5, #42a5f5);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
+            font-weight: 700;
+            animation: fadeIn 1s ease-in;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
         }
         h2 {
             color: #1e88e5;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.8em;
         }
-        a {
-            color: #1e88e5;
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #1e88e5;
+            color: white;
             text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s;
         }
-        a:hover {
-            text-decoration: underline;
+        .button:hover {
+            background-color: #1565c0;
         }
         footer {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #ddd;
+            background-color: #e0e0e0;
+            padding: 15px;
+            text-align: center;
             font-size: 0.9em;
+            margin-top: 20px;
         }
         .emoji {
             font-size: 1.5em;
+            vertical-align: middle;
             margin: 0 5px;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            section {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LBPN</h1>
-        <p>Desenvolvedor de Apps</p>
+        <h1>LBPN 🚗</h1>
+        <p>Desenvolvedor de Apps para Motoristas</p>
     </header>
 
-    <section>
-        <h2>Calculadora de Combustível ⛽</h2>
-        <p>
-            Um app simples e prático para motoristas! 
-            Calcule o consumo do seu veículo 📊, 
-            simule abastecimentos 💰, 
-            planeje viagens 🌍 e compare combustíveis ⚖️. 
-            Tudo com uma interface fácil de usar e ajuda integrada ❓.
-        </p>
-        <p>
-            <strong>Disponível na Google Play Store:</strong> 
-            <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" target="_blank">
-                Baixe agora! 📲
-            </a>
-        </p>
-    </section>
+    <div class="container">
+        <section>
+            <h2>Calculadora de Combustível ⛽</h2>
+            <p>
+                Um app prático e gratuito para ajudar você na estrada! Calcule o consumo do seu veículo 📊, 
+                simule abastecimentos 💰, planeje viagens 🌍 e descubra se álcool 🍶 ou gasolina ⛽ vale mais.
+            </p>
+            <p>
+                <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" 
+                   target="_blank" class="button">Baixe na Play Store 📲</a>
+            </p>
+        </section>
 
-    <section>
-        <h2>Política de Privacidade 🔒</h2>
-        <p>
-            O Calculadora de Combustível não coleta dados pessoais dos usuários 🚫. 
-            Todas as informações inseridas (como distância ou preços) ficam apenas no seu dispositivo. 
-            Usamos anúncios do Google AdMob para manter o app gratuito, mas não rastreamos você! 
-            Qualquer dúvida, entre em contato.
-        </p>
-    </section>
+        <section>
+            <h2>Política de Privacidade 🔒</h2>
+            <p>
+                O Calculadora de Combustível não coleta dados pessoais 🚫. Tudo o que você digita fica no seu celular. 
+                Usamos anúncios do Google AdMob para manter o app grátis, mas sua privacidade está garantida!
+            </p>
+        </section>
 
-    <section>
-        <h2>Contato 📧</h2>
-        <p>
-            Tem sugestões ou perguntas? Envie um e-mail para: 
-            <a href="mailto:lbpn.suporte@gmail.com">lbpn.suporte@gmail.com</a> ✉️
-        </p>
-    </section>
+        <section>
+            <h2>Contato 📧</h2>
+            <p>
+                Quer sugerir algo ou tirar dúvidas? Envie um e-mail para: 
+                <a href="mailto:lbpn.suporte@gmail.com">lbpn.suporte@gmail.com</a> ✉️
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 LBPN</p>
+    </footer>
 </body>
 </html>

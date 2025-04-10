@@ -22,7 +22,7 @@
         /* Cabeçalho */
         header {
             position: relative;
-            height: 100vh;
+            height: 50vh; /* Reduzido de 100vh */
             background: linear-gradient(135deg, rgba(30, 136, 229, 0.8), rgba(66, 165, 245, 0.8)), 
                         url('https://images.unsplash.com/photo-1534665482403-a909d0d97fd7?auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
             color: white;
@@ -34,13 +34,13 @@
             padding: 20px;
         }
         header h1 {
-            font-size: 3.5em;
+            font-size: 2.5em;
             font-weight: 400;
             animation: slideIn 1s ease-out;
         }
         header p {
-            font-size: 1.5em;
-            margin-top: 15px;
+            font-size: 1.2em;
+            margin-top: 10px;
         }
         /* Container */
         .container {
@@ -60,7 +60,7 @@
             animation: fadeUp 0.8s ease-out;
         }
         section:hover {
-            transform: translateY(-10px);
+            transform: translateBUTTONY(-10px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         h2 {
@@ -106,10 +106,10 @@
         /* Responsividade */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5em;
+                font-size: 1.8em;
             }
             header p {
-                font-size: 1.2em;
+                font-size: 1em;
             }
             .container {
                 grid-template-columns: 1fr;
@@ -135,10 +135,10 @@
 
     <div class="container">
         <section id="app">
-            <h2><i class="fas fa-gas-pump"></i> Calculadora de Combustível ⛽</h2>
+            <h2><i class="fas fa-gas-pump"></i> Calculadora de Combustível</h2>
             <p>
                 Um app gratuito e prático para sua estrada! Calcule consumo 📊, 
-                simule abastecimentos 💰, planeje viagens 🌍 e compare álcool 🍶 ou gasolina ⛽.
+                simule abastecimentos 💰, planeje viagens 🌍 e compare álcool ou gasolina ⛽.
             </p>
             <p>
                 <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" 
@@ -147,7 +147,7 @@
         </section>
 
         <section id="privacidade">
-            <h2><i class="fas fa-lock"></i> Política de Privacidade 🔒</h2>
+            <h2><i class="fas fa-lock"></i> Política de Privacidade</h2>
             <p>
                 O Calculadora de Combustível não coleta dados pessoais 🚫. 
                 Seus cálculos ficam no celular. Usamos AdMob para anúncios, mas sua privacidade é prioridade!
@@ -155,7 +155,7 @@
         </section>
 
         <section id="contato">
-            <h2><i class="fas fa-envelope"></i> Contato 📧</h2>
+            <h2><i class="fas fa-envelope"></i> Contato</h2>
             <p>
                 Sugestões ou dúvidas? Fale comigo em: 
                 <a href="mailto:lbpn.suporte@gmail.com">lbpn.suporte@gmail.com</a> ✉️

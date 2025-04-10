@@ -11,13 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Importa ícones da biblioteca Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        /* === Reset e Configurações Globais === */
         /* Reseta margens, preenchimentos e define box-sizing global */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         /* Estiliza o corpo da página */
         body {
             font-family: 'Montserrat', sans-serif; /* Define a fonte padrão */
@@ -26,6 +29,8 @@
             line-height: 1.6; /* Altura da linha para legibilidade */
             overflow-x: hidden; /* Evita rolagem horizontal */
         }
+
+        /* === Estilos do Cabeçalho === */
         /* Estiliza o cabeçalho */
         header {
             position: relative; /* Posicionamento relativo para camadas */
@@ -40,17 +45,21 @@
             text-align: center; /* Alinha texto ao centro */
             padding: 20px; /* Espaçamento interno */
         }
+
         /* Estiliza o título principal no cabeçalho */
         header h1 {
             font-size: 2.5em; /* Tamanho da fonte reduzido */
             font-weight: 400; /* Peso da fonte */
             animation: slideIn 1s ease-out; /* Animação de entrada */
         }
+
         /* Estiliza o parágrafo no cabeçalho */
         header p {
             font-size: 1.2em; /* Tamanho da fonte reduzido */
             margin-top: 10px; /* Espaço acima */
         }
+
+        /* === Estilos do Container Principal === */
         /* Define o container principal */
         .container {
             max-width: 1200px; /* Largura máxima */
@@ -60,6 +69,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
             gap: 30px; /* Espaço entre os itens */
         }
+
         /* Estiliza as seções dentro do container */
         section {
             background: white; /* Fundo branco */
@@ -69,11 +79,14 @@
             transition: transform 0.3s, box-shadow 0.3s; /* Transições para hover */
             animation: fadeUp 0.8s ease-out; /* Animação de entrada */
         }
+
         /* Efeito hover nas seções */
         section:hover {
             transform: translateY(-10px); /* Eleva a seção */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
         }
+
+        /* === Estilos de Texto e Títulos === */
         /* Estiliza os títulos das seções */
         h2 {
             color: #1e88e5; /* Cor azul */
@@ -81,16 +94,20 @@
             font-size: 1.8em; /* Tamanho da fonte */
             margin-bottom: 15px; /* Espaço abaixo */
         }
+
         /* Estiliza os ícones dentro dos títulos */
         h2 i {
             margin-right: 10px; /* Espaço à direita */
             color: #42a5f5; /* Cor azul mais clara */
         }
+
         /* Estiliza os parágrafos */
         p {
             font-size: 1.1em; /* Tamanho da fonte */
             margin-bottom: 20px; /* Espaço abaixo */
         }
+
+        /* === Estilos de Botões === */
         /* Estiliza os botões */
         .button {
             display: inline-block; /* Comportamento de bloco inline */
@@ -102,11 +119,14 @@
             font-weight: 600; /* Peso da fonte */
             transition: transform 0.3s, background 0.3s; /* Transições para hover */
         }
+
         /* Efeito hover nos botões */
         .button:hover {
             background: linear-gradient(135deg, #1565c0, #1e88e5); /* Gradiente mais escuro */
             transform: scale(1.05); /* Aumenta ligeiramente */
         }
+
+        /* === Estilos do Rodapé === */
         /* Estiliza o rodapé */
         footer {
             background: #333; /* Fundo escuro */
@@ -116,11 +136,15 @@
             font-size: 0.9em; /* Tamanho da fonte */
             margin-top: 40px; /* Espaço acima */
         }
+
+        /* === Estilos de Elementos Específicos === */
         /* Estiliza os emojis */
         .emoji {
             font-size: 1.5em; /* Tamanho da fonte */
             margin: 0 5px; /* Espaço horizontal */
         }
+
+        /* === Responsividade === */
         /* Media query para responsividade em telas menores */
         @media (max-width: 768px) {
             header h1 {
@@ -134,11 +158,14 @@
                 padding: 20px; /* Espaçamento interno ajustado */
             }
         }
+
+        /* === Animações === */
         /* Define a animação de entrada do cabeçalho */
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; } /* Início: deslocado para cima e invisível */
             to { transform: translateY(0); opacity: 1; } /* Fim: posição normal e visível */
         }
+
         /* Define a animação de entrada das seções */
         @keyframes fadeUp {
             from { transform: translateY(30px); opacity: 0; } /* Início: deslocado para baixo e invisível */

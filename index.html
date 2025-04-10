@@ -1,170 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Configura a responsividade para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página exibido na aba do navegador -->
     <title>LBPN - Desenvolvedor de Apps</title>
+    <!-- Importa a fonte Montserrat do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Importa ícones da biblioteca Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Reseta margens, preenchimentos e define box-sizing global */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        /* Estiliza o corpo da página */
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif; /* Define a fonte padrão */
+            background-color: #f5f7fa; /* Cor de fundo clara */
+            color: #333; /* Cor do texto */
+            line-height: 1.6; /* Altura da linha para legibilidade */
+            overflow-x: hidden; /* Evita rolagem horizontal */
         }
-        /* Cabeçalho */
+        /* Estiliza o cabeçalho */
         header {
-            position: relative;
-            height: 50vh; /* Reduzido de 100vh */
+            position: relative; /* Posicionamento relativo para camadas */
+            height: 50vh; /* Altura reduzida do cabeçalho (metade da tela) */
             background: linear-gradient(135deg, rgba(30, 136, 229, 0.8), rgba(66, 165, 245, 0.8)), 
-                        url('https://images.unsplash.com/photo-1534665482403-a909d0d97fd7?auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
+                        url('https://images.unsplash.com/photo-1534665482403-a909d0d97fd7?auto=format&fit=crop&w=1920&q=80') no-repeat center/cover; /* Gradiente sobre imagem de fundo */
+            color: white; /* Cor do texto no cabeçalho */
+            display: flex; /* Usa flexbox para alinhamento */
+            flex-direction: column; /* Alinha itens em coluna */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center; /* Alinha texto ao centro */
+            padding: 20px; /* Espaçamento interno */
         }
+        /* Estiliza o título principal no cabeçalho */
         header h1 {
-            font-size: 2.5em;
-            font-weight: 400;
-            animation: slideIn 1s ease-out;
+            font-size: 2.5em; /* Tamanho da fonte reduzido */
+            font-weight: 400; /* Peso da fonte */
+            animation: slideIn 1s ease-out; /* Animação de entrada */
         }
+        /* Estiliza o parágrafo no cabeçalho */
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.2em; /* Tamanho da fonte reduzido */
+            margin-top: 10px; /* Espaço acima */
         }
-        /* Container */
+        /* Define o container principal */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            max-width: 1200px; /* Largura máxima */
+            margin: 0 auto; /* Centraliza horizontalmente */
+            padding: 40px 20px; /* Espaçamento interno */
+            display: grid; /* Usa grid para layout */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+            gap: 30px; /* Espaço entre os itens */
         }
+        /* Estiliza as seções dentro do container */
         section {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeUp 0.8s ease-out;
+            background: white; /* Fundo branco */
+            padding: 30px; /* Espaçamento interno */
+            border-radius: 15px; /* Bordas arredondadas */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transições para hover */
+            animation: fadeUp 0.8s ease-out; /* Animação de entrada */
         }
+        /* Efeito hover nas seções */
         section:hover {
-            transform: translateBUTTONY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px); /* Eleva a seção */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
         }
+        /* Estiliza os títulos das seções */
         h2 {
-            color: #1e88e5;
-            font-weight: 600;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            color: #1e88e5; /* Cor azul */
+            font-weight: 600; /* Peso da fonte */
+            font-size: 1.8em; /* Tamanho da fonte */
+            margin-bottom: 15px; /* Espaço abaixo */
         }
+        /* Estiliza os ícones dentro dos títulos */
         h2 i {
-            margin-right: 10px;
-            color: #42a5f5;
+            margin-right: 10px; /* Espaço à direita */
+            color: #42a5f5; /* Cor azul mais clara */
         }
+        /* Estiliza os parágrafos */
         p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+            font-size: 1.1em; /* Tamanho da fonte */
+            margin-bottom: 20px; /* Espaço abaixo */
         }
+        /* Estiliza os botões */
         .button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #1e88e5, #42a5f5);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.3s, background 0.3s;
+            display: inline-block; /* Comportamento de bloco inline */
+            padding: 12px 30px; /* Espaçamento interno */
+            background: linear-gradient(135deg, #1e88e5, #42a5f5); /* Gradiente azul */
+            color: white; /* Cor do texto */
+            text-decoration: none; /* Remove sublinhado */
+            border-radius: 25px; /* Bordas arredondadas */
+            font-weight: 600; /* Peso da fonte */
+            transition: transform 0.3s, background 0.3s; /* Transições para hover */
         }
+        /* Efeito hover nos botões */
         .button:hover {
-            background: linear-gradient(135deg, #1565c0, #1e88e5);
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #1565c0, #1e88e5); /* Gradiente mais escuro */
+            transform: scale(1.05); /* Aumenta ligeiramente */
         }
+        /* Estiliza o rodapé */
         footer {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            margin-top: 40px;
+            background: #333; /* Fundo escuro */
+            color: white; /* Cor do texto */
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Alinha texto ao centro */
+            font-size: 0.9em; /* Tamanho da fonte */
+            margin-top: 40px; /* Espaço acima */
         }
+        /* Estiliza os emojis */
         .emoji {
-            font-size: 1.5em;
-            margin: 0 5px;
+            font-size: 1.5em; /* Tamanho da fonte */
+            margin: 0 5px; /* Espaço horizontal */
         }
-        /* Responsividade */
+        /* Media query para responsividade em telas menores */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.8em; /* Tamanho reduzido para telas pequenas */
             }
             header p {
-                font-size: 1em;
+                font-size: 1em; /* Tamanho reduzido para telas pequenas */
             }
             .container {
-                grid-template-columns: 1fr;
-                padding: 20px;
+                grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+                padding: 20px; /* Espaçamento interno ajustado */
             }
         }
-        /* Animações */
+        /* Define a animação de entrada do cabeçalho */
         @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from { transform: translateY(-50px); opacity: 0; } /* Início: deslocado para cima e invisível */
+            to { transform: translateY(0); opacity: 1; } /* Fim: posição normal e visível */
         }
+        /* Define a animação de entrada das seções */
         @keyframes fadeUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from { transform: translateY(30px); opacity: 0; } /* Início: deslocado para baixo e invisível */
+            to { transform: translateY(0); opacity: 1; } /* Fim: posição normal e visível */
         }
     </style>
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header>
-        <h1>LBPN</h1>
-        <p>Desenvolvedor de Apps</p>
+        <h1>LBPN</h1> <!-- Título principal -->
+        <p>Desenvolvedor de Apps</p> <!-- Subtítulo -->
     </header>
 
+    <!-- Container principal com seções -->
     <div class="container">
+        <!-- Seção do aplicativo -->
         <section id="app">
-            <h2><i class="fas fa-gas-pump"></i> Calculadora de Combustível</h2>
+            <h2><i class="fas fa-gas-pump"></i> Calculadora de Combustível</h2> <!-- Título da seção -->
             <p>
                 Um app gratuito e prático para sua estrada! Calcule consumo 📊, 
-                simule abastecimentos 💰, planeje viagens 🌍 e compare álcool ou gasolina ⛽.
-            </p>
+                simule abastecimentos 💰, planeje viagens 🌍 e compare álcool 🍶 ou gasolina ⛽.
+            </p> <!-- Descrição do app -->
             <p>
+                <!-- Link para a Play Store -->
                 <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" 
                    target="_blank" class="button">Baixe na Play Store 📲</a>
             </p>
         </section>
 
+        <!-- Seção de política de privacidade -->
         <section id="privacidade">
-            <h2><i class="fas fa-lock"></i> Política de Privacidade</h2>
+            <h2><i class="fas fa-lock"></i> Política de Privacidade</h2> <!-- Título da seção -->
             <p>
                 O Calculadora de Combustível não coleta dados pessoais 🚫. 
                 Seus cálculos ficam no celular. Usamos AdMob para anúncios, mas sua privacidade é prioridade!
-            </p>
+            </p> <!-- Texto da política -->
         </section>
 
+        <!-- Seção de contato -->
         <section id="contato">
-            <h2><i class="fas fa-envelope"></i> Contato</h2>
+            <h2><i class="fas fa-envelope"></i> Contato</h2> <!-- Título da seção -->
             <p>
                 Sugestões ou dúvidas? Fale comigo em: 
                 <a href="mailto:lbpn.suporte@gmail.com">lbpn.suporte@gmail.com</a> ✉️
-            </p>
+            </p> <!-- Informações de contato -->
         </section>
     </div>
 
+    <!-- Rodapé da página -->
     <footer>
-        <p>© 2025 LBPN</p>
+        <p>© 2025 LBPN</p> <!-- Texto de direitos autorais -->
     </footer>
 </body>
 </html>

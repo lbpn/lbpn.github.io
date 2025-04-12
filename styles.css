@@ -49,6 +49,7 @@ nav ul li a {
   text-decoration: none;
   font-size: 1.3rem;
   transition: color 0.3s;
+  text-shadow: 0 0 5px #0f0; /* Sombra para contraste */
 }
 
 nav ul li a:hover {
@@ -71,7 +72,7 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-/* Efeito Glitch no título (Restaurado) */
+/* Efeito Glitch no título */
 h1.glitch {
   font-size: 4.5rem;
   position: relative;
@@ -164,6 +165,7 @@ p.typing {
   margin-top: 2rem;
   text-align: left;
   box-shadow: 0 0 15px #0f0;
+  overflow-x: hidden; /* Evita overflow horizontal */
 }
 
 .terminal-header {
@@ -176,6 +178,7 @@ p.typing {
 .terminal-body {
   min-height: 150px;
   padding: 1rem;
+  word-break: break-word; /* Quebra linhas longas */
 }
 
 .terminal-body p {
@@ -275,45 +278,77 @@ footer p {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  h1.glitch {
-    font-size: 3rem;
-  }
-
-  p.typing {
-    font-size: 1.4rem;
+  /* Navegação */
+  nav {
+    padding: 0.5rem 0; /* Reduzido para economizar espaço */
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
+    padding: 0.5rem 0;
   }
 
   nav ul li {
-    margin: 0.5rem 0;
+    margin: 0.8rem 0; /* Mais espaço para toque */
   }
 
   nav ul li a {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Maior para legibilidade */
+    padding: 0.5rem 1rem; /* Área de toque maior */
+    text-shadow: 0 0 8px #0f0; /* Mais contraste */
   }
 
+  /* Título */
+  h1.glitch {
+    font-size: 2.5rem; /* Reduzido para caber melhor */
+  }
+
+  /* Subtítulo */
+  p.typing {
+    font-size: 1.2rem;
+    white-space: normal; /* Permite quebra de linha se necessário */
+  }
+
+  /* Seções */
   section {
     padding: 3rem 1rem;
+    min-height: auto; /* Evita seções muito altas */
   }
 
+  /* Terminal Interativo */
   .terminal {
-    width: 90%;
+    width: 95%; /* Quase toda a largura */
+    max-width: 100%; /* Remove limite rígido */
+    padding: 0.5rem; /* Menos padding interno */
+    margin-top: 1rem;
+    box-shadow: 0 0 10px #0f0; /* Sombra menor */
   }
 
   .terminal-header {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0.3rem;
+  }
+
+  .terminal-body {
+    padding: 0.5rem;
+    min-height: 120px;
   }
 
   .terminal-body p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Menor para evitar overflow */
+    white-space: normal; /* Permite quebra de linha */
+    word-break: break-word; /* Quebra palavras longas */
   }
 
-  .contact-links p {
-    font-size: 1.2rem;
+  /* Projetos */
+  .project-grid {
+    grid-template-columns: 1fr; /* Uma coluna no mobile */
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1rem;
   }
 
   .project-card h3 {
@@ -321,10 +356,55 @@ footer p {
   }
 
   .project-card p {
+    font-size: 1rem;
+  }
+
+  .project-card a {
+    font-size: 1rem;
+  }
+
+  /* Contato */
+  .contact-links {
+    width: 90%;
+  }
+
+  .contact-links p {
     font-size: 1.1rem;
   }
 
+  /* Rodapé */
+  footer {
+    padding: 1.5rem;
+  }
+
   footer p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Telas muito pequenas (ex.: 480px ou menos) */
+@media (max-width: 480px) {
+  h1.glitch {
+    font-size: 2rem;
+  }
+
+  p.typing {
+    font-size: 1rem;
+  }
+
+  nav ul li a {
     font-size: 1.2rem;
+  }
+
+  .terminal-body p {
+    font-size: 0.9rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
   }
 }

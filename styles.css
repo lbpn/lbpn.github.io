@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #0f0; /* Verde neon */
+  font-family: 'VT323', monospace;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 1.1rem;
+}
+
+/* Canvas de fundo (Matrix Rain) */
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Navegação */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  color: #0f0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f0f;
+}
+
+/* Seções gerais */
+section {
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Efeito Glitch no título (Restaurado) */
+h1.glitch {
+  font-size: 4.5rem;
+  position: relative;
+  color: #0f0;
+  animation: glitch 2s infinite;
+}
+
+h1.glitch::before,
+h1.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1.glitch::before {
+  color: #f0f;
+  animation: glitch-top 1s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+h1.glitch::after {
+  color: #00f;
+  animation: glitch-bottom 1.5s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+/* Efeito de digitação */
+p.typing {
+  font-size: 1.8rem;
+  border-right: 2px solid #0f0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.5s step-end infinite;
+}
+
+/* Grid de projetos */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  background: rgba(0, 255, 0, 0.1);
+  padding: 1.5rem;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #0f0;
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.project-card a {
+  color: #f0f;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo do Terminal Interativo */
+.terminal {
+  background: #000;
+  border: 1px solid #0f0;
+  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  text-align: left;
+  box-shadow: 0 0 15px #0f0;
+}
+
+.terminal-header {
+  background: #0f0;
+  color: #000;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.terminal-body {
+  min-height: 150px;
+  padding: 1rem;
+}
+
+.terminal-body p {
+  margin: 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  font-size: 1.3rem;
+}
+
+/* Animação de digitação para cada linha do terminal */
+.terminal-body p.animate {
+  animation: typing 2s steps(40, end) forwards, blink-cursor 0.5s step-end 4;
+}
+
+/* Seção Contato (Links) */
+.contact-links {
+  margin-top: 2rem;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-links p {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.contact-links span {
+  color: #f0f;
+  font-weight: 400;
+}
+
+.contact-links a {
+  color: #0f0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-links a:hover {
+  color: #f0f;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  font-size: 1.3rem;
+}
+
+/* Animações */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -3px); }
+  60% { transform: translate(-3px, -3px); }
+  80% { transform: translate(3px, 3px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-top {
+  0% { transform: translate(0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, -5px); }
+  60% { transform: translate(-5px, -5px); }
+  80% { transform: translate(5px, 5px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-bottom {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    border-right: 2px solid #0f0;
+  }
+  to {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+@keyframes blink-cursor {
+  50% { border-right-color: transparent; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1.glitch {
+    font-size: 3rem;
+  }
+
+  p.typing {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .terminal {
+    width: 90%;
+  }
+
+  .terminal-header {
+    font-size: 1.2rem;
+  }
+
+  .terminal-body p {
+    font-size: 1.2rem;
+  }
+
+  .contact-links p {
+    font-size: 1.2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-card p {
+    font-size: 1.1rem;
+  }
+
+  footer p {
+    font-size: 1.2rem;
+  }
+}

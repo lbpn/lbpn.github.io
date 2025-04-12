@@ -165,7 +165,7 @@ p.typing {
   margin-top: 2rem;
   text-align: left;
   box-shadow: 0 0 15px #0f0;
-  overflow-x: hidden; /* Evita overflow horizontal */
+  overflow-x: hidden;
 }
 
 .terminal-header {
@@ -178,7 +178,7 @@ p.typing {
 .terminal-body {
   min-height: 150px;
   padding: 1rem;
-  word-break: break-word; /* Quebra linhas longas */
+  word-break: break-word;
 }
 
 .terminal-body p {
@@ -280,49 +280,51 @@ footer p {
 @media (max-width: 768px) {
   /* Navegação */
   nav {
-    padding: 0.5rem 0; /* Reduzido para economizar espaço */
+    padding: 0.3rem 0; /* Menos espaço vertical */
   }
 
   nav ul {
-    flex-direction: column;
+    display: flex; /* Mantém horizontal */
+    justify-content: center;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
+    flex-wrap: nowrap; /* Evita quebra de linha */
   }
 
   nav ul li {
-    margin: 0.8rem 0; /* Mais espaço para toque */
+    margin: 0 0.8rem; /* Menos margem lateral */
   }
 
   nav ul li a {
-    font-size: 1.4rem; /* Maior para legibilidade */
-    padding: 0.5rem 1rem; /* Área de toque maior */
-    text-shadow: 0 0 8px #0f0; /* Mais contraste */
+    font-size: 1.1rem; /* Menor para caber */
+    padding: 0.4rem 0.6rem; /* Área de toque */
+    text-shadow: 0 0 8px #0f0;
   }
 
   /* Título */
   h1.glitch {
-    font-size: 2.5rem; /* Reduzido para caber melhor */
+    font-size: 2.5rem;
   }
 
   /* Subtítulo */
   p.typing {
     font-size: 1.2rem;
-    white-space: normal; /* Permite quebra de linha se necessário */
+    white-space: normal;
   }
 
   /* Seções */
   section {
     padding: 3rem 1rem;
-    min-height: auto; /* Evita seções muito altas */
+    min-height: auto;
   }
 
   /* Terminal Interativo */
   .terminal {
-    width: 95%; /* Quase toda a largura */
-    max-width: 100%; /* Remove limite rígido */
-    padding: 0.5rem; /* Menos padding interno */
+    width: 95%;
+    max-width: 100%;
+    padding: 0.5rem;
     margin-top: 1rem;
-    box-shadow: 0 0 10px #0f0; /* Sombra menor */
+    box-shadow: 0 0 10px #0f0;
   }
 
   .terminal-header {
@@ -336,14 +338,14 @@ footer p {
   }
 
   .terminal-body p {
-    font-size: 1rem; /* Menor para evitar overflow */
-    white-space: normal; /* Permite quebra de linha */
-    word-break: break-word; /* Quebra palavras longas */
+    font-size: 1rem;
+    white-space: normal;
+    word-break: break-word;
   }
 
   /* Projetos */
   .project-grid {
-    grid-template-columns: 1fr; /* Uma coluna no mobile */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
@@ -384,22 +386,32 @@ footer p {
 
 /* Telas muito pequenas (ex.: 480px ou menos) */
 @media (max-width: 480px) {
+  /* Navegação */
+  nav ul li {
+    margin: 0 0.5rem; /* Ainda menos margem */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* Menor ainda */
+    padding: 0.3rem 0.5rem;
+  }
+
+  /* Título */
   h1.glitch {
     font-size: 2rem;
   }
 
+  /* Subtítulo */
   p.typing {
     font-size: 1rem;
   }
 
-  nav ul li a {
-    font-size: 1.2rem;
-  }
-
+  /* Terminal */
   .terminal-body p {
     font-size: 0.9rem;
   }
 
+  /* Projetos */
   .project-card h3 {
     font-size: 1.2rem;
   }

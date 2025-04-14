@@ -48,8 +48,7 @@ const terminalData = [
   '> Iniciando sistema... [OK]',
   '> Nome: Leonardo Brandão',
   '> Ocupação: Desenvolvedor Mobile',
-  '> Habilidades: HTML, CSS, JavaScript, Python, Flutter, Java, C#',
-  '> Missão: Sempre querer aprender novas tecnologias para criar soluções digitais'
+  '> Habilidades: HTML, CSS, JavaScript, Python, Flutter, Java, C#'
 ];
 
 function displayTerminalLines() {

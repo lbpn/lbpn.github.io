@@ -48,7 +48,7 @@ const terminalData = [
   '> Iniciando sistema... [OK]',
   '> Nome: Leonardo Brandão',
   '> Ocupação: Desenvolvedor Mobile',
-  '> Conhecimento: HTML, CSS, JavaScript, Python, Flutter, Java, C#'
+  '> Conhecimento: Flutter, Java, C#'
 ];
 
 function displayTerminalLines() {
@@ -68,3 +68,4 @@ function displayTerminalLines() {
 window.addEventListener('load', () => {
   displayTerminalLines();
 });
+

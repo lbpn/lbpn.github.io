@@ -4,12 +4,356 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leonardo Brandão | Dev Mobile</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  
+  <!-- Fontes Modernas: Poppins (Títulos), Inter (Textos), Fira Code (Terminal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Phosphor -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    /* === Variáveis de Tema (Modern Dark) === */
+    :root {
+      --bg-main: #09090b; /* Fundo principal escuro (Zinc 950) */
+      --bg-card: #18181b; /* Fundo dos cartões (Zinc 900) */
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --accent-color: #3b82f6; /* Azul moderno */
+      --accent-glow: rgba(59, 130, 246, 0.5);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --terminal-green: #4ade80;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* === Tipografia === */
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    /* === Navegação (Glassmorphism) === */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(9, 9, 11, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1.2rem 0;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a:hover {
+      color: var(--text-primary);
+    }
+
+    /* === Estrutura Base === */
+    section {
+      padding: 8rem 2rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      background: linear-gradient(to right, #fff, #a1a1aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* === Seção Home === */
+    #home {
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff 0%, #71717a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Fira Code', monospace;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      color: var(--accent-color);
+    }
+
+    /* === Seção Projetos (Grid Moderna) === */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-stack span {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    .project-link:hover {
+      color: var(--accent-color);
+    }
+
+    /* === Seção Sobre (Terminal Moderno) === */
+    #sobre {
+      width: 100%;
+    }
+
+    .modern-terminal {
+      width: 100%;
+      max-width: 800px;
+      background: #000; /* Fundo bem escuro para o terminal */
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .terminal-header {
+      background: #18181b;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 8px;
+      margin-right: 1rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #10b981; }
+
+    .terminal-body {
+      padding: 1.5rem;
+      min-height: 200px;
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      color: var(--terminal-green);
+      line-height: 1.8;
+    }
+
+    .terminal-body p {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+      width: 0;
+    }
+
+    /* Animação de digitação */
+    .terminal-body p.animate {
+      animation: typing 1.5s steps(40, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* === Seção Contato === */
+    .contact-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 3rem;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-links p {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-links span {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    .contact-links a {
+      color: var(--text-primary);
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+      color: var(--text-secondary);
+    }
+
+    /* === Rodapé === */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border-color);
+      font-family: 'Fira Code', monospace;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* === Responsividade === */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      nav ul li a {
+        font-size: 0.8rem;
+      }
+      section {
+        padding: 6rem 1rem 3rem;
+      }
+      .contact-container {
+        padding: 1.5rem;
+      }
+      .contact-links p {
+        font-size: 0.9rem;
+        word-break: break-all;
+      }
+      .terminal-body {
+        font-size: 0.85rem;
+        padding: 1rem;
+      }
+      .terminal-body p {
+        white-space: normal; /* Permite quebrar linha no mobile */
+        width: auto;
+        animation: none; /* Desativa o typing no mobile se quebrar linha */
+        opacity: 0;
+      }
+      .terminal-body p.animate {
+        animation: fadein 0.5s forwards;
+      }
+      @keyframes fadein {
+        to { opacity: 1; }
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Fundo com Matrix Rain -->
-  <canvas id="bg"></canvas>
 
   <!-- Navegação -->
   <nav>
@@ -23,8 +367,8 @@
 
   <!-- Seção Home -->
   <section id="home">
-    <h1 class="glitch" data-text="Leonardo Brandão">Leonardo Brandão</h1>
-    <p class="typing">> Desenvolvedor Mobile</p>
+    <h1 class="hero-title">Leonardo Brandão</h1>
+    <p class="hero-subtitle">> Desenvolvedor Mobile</p>
   </section>
 
   <!-- Seção Projetos -->
@@ -34,35 +378,65 @@
       <!-- Projeto 1 -->
       <div class="project-card">
         <h3>Minhas Finanças</h3>
-        <p>Minhas Finanças é um aplicativo de gerenciamento financeiro pessoal desenvolvido em Flutter.</p>
-        <a href="https://github.com/lbpn/minhas-financas" target="_blank">Ver no GitHub</a>
+        <p>Aplicativo de gestão financeira focado em oferecer uma experiência de usuário fluida para o controle de gastos e receitas do dia a dia.</p>
+        <div class="tech-stack">
+          <span>Flutter</span>
+          <span>Dart</span>
+        </div>
+        <a href="https://github.com/lbpn/minhas-financas" target="_blank" class="project-link">
+          <i class="ph-bold ph-github-logo"></i> Ver no GitHub
+        </a>
       </div>
       <!-- Projeto 2 -->
       <div class="project-card">
         <h3>Notas App</h3>
-        <p>Um aplicativo de anotações simples, leve e funcional desenvolvido com Flutter.</p>
-        <a href="https://github.com/lbpn/notas-app-flutter" target="_blank">Ver no GitHub</a>
+        <p>Aplicativo de anotações focado em performance e simplicidade. Ideal para organização pessoal ágil com armazenamento eficiente.</p>
+        <div class="tech-stack">
+          <span>Flutter</span>
+          <span>Dart</span>
+        </div>
+        <a href="https://github.com/lbpn/notas-app-flutter" target="_blank" class="project-link">
+          <i class="ph-bold ph-github-logo"></i> Ver no GitHub
+        </a>
       </div>
       <!-- Projeto 3 -->
       <div class="project-card">
         <h3>Compactador de Imagens</h3>
-        <p>Um compactador de imagens baseado em HTML, CSS e JavaScript que permite reduzir o tamanho de imagens JPG e PNG sem perda significativa de qualidade.</p>
-        <a href="https://github.com/lbpn/campactador-de-imagens" target="_blank">Ver no GitHub</a>
+        <p>Ferramenta web responsiva para otimização de imagens. Reduz drasticamente o tamanho de arquivos JPG e PNG preservando a qualidade visual.</p>
+        <div class="tech-stack">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+        <a href="https://github.com/lbpn/campactador-de-imagens" target="_blank" class="project-link">
+          <i class="ph-bold ph-github-logo"></i> Ver no GitHub
+        </a>
       </div>
       <!-- Projeto 4 -->
       <div class="project-card">
         <h3>Calculadora Combustível</h3>
-        <p>Calcule consumo 📊, simule abastecimentos 💰, planeje viagens 🌍 e compare álcool ou gasolina ⛽. Desenvolvido com Flutter</p>
-        <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" target="_blank">Ver no Google Play</a>
+        <p>Utilitário inteligente para motoristas. Calcule consumo 📊, planeje viagens 🌍 e compare a rentabilidade entre álcool e gasolina ⛽.</p>
+        <div class="tech-stack">
+          <span>Flutter</span>
+          <span>Dart</span>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" target="_blank" class="project-link" style="color: #4ade80;">
+          <i class="ph-fill ph-google-play-logo" style="font-size: 1.2rem;"></i> Ver no Google Play
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Seção Sobre (com Terminal Interativo) -->
+  <!-- Seção Sobre -->
   <section id="sobre">
     <h2>Quem sou eu?</h2>
-    <div class="terminal" id="terminal">
+    <div class="modern-terminal" id="terminal">
       <div class="terminal-header">
+        <div class="window-controls">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
         <span>lbpn@dev:~$</span>
       </div>
       <div class="terminal-body" id="terminal-output">
@@ -71,21 +445,64 @@
     </div>
   </section>
 
-  <!-- Seção Contato (Links) -->
+  <!-- Seção Contato -->
   <section id="contato">
     <h2>Contato</h2>
-    <div class="contact-links">
-      <p><span>> LinkedIn:</span> <a href="https://www.linkedin.com/in/leonardo-brand%C3%A3o-42b5971a3/" target="_blank">Meu Perfil - Leonardo Brandão</a></p>
-      <p><span>> E-mail:</span> <a href="mailto:leo.brandao94@gmail.com">leo.brandao94@gmail.com</a></p>
-      <p><span>> GitHub:</span> <a href="https://github.com/lbpn" target="_blank">github.com/lbpn</a></p>
+    <div class="contact-container">
+      <div class="contact-links">
+        <p><span>> LinkedIn:</span> <a href="https://www.linkedin.com/in/leonardo-brand%C3%A3o-42b5971a3/" target="_blank">Meu Perfil - Leonardo Brandão</a></p>
+        <p><span>> E-mail:</span> <a href="mailto:leo.brandao94@gmail.com">leo.brandao94@gmail.com</a></p>
+        <p><span>> GitHub:</span> <a href="https://github.com/lbpn" target="_blank">github.com/lbpn</a></p>
+      </div>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <p>> Desenvolvido por Leonardo Brandão - 2025</p>
+    <p>> Desenvolvido por Leonardo Brandão - 2026</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script do Terminal Interativo -->
+  <script>
+    // Terminal Interativo (Mantendo a sua lógica original)
+    const terminalOutput = document.getElementById('terminal-output');
+
+    // Dados que serão exibidos
+    const terminalData = [
+      '> Iniciando sistema... [OK]',
+      '> Nome: Leonardo Brandão',
+      '> Ocupação: Desenvolvedor Mobile',
+      '> Conhecimento: Flutter, Java, C#, IAs'
+    ];
+
+    function displayTerminalLines() {
+      // Usando Intersection Observer para só animar quando chegar na seção "Sobre"
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          // Garante que só executa uma vez
+          if(terminalOutput.children.length === 0) {
+            terminalData.forEach((line, index) => {
+              setTimeout(() => {
+                const p = document.createElement('p');
+                p.textContent = line;
+                terminalOutput.appendChild(p);
+                // Pequeno delay para a classe engatilhar a animação CSS
+                setTimeout(() => {
+                  p.classList.add('animate');
+                }, 50);
+              }, index * 1200); // Acelerei um pouco para a experiência ficar mais dinâmica
+            });
+          }
+        }
+      }, { threshold: 0.5 });
+
+      observer.observe(document.getElementById('sobre'));
+    }
+
+    // Inicia a observação quando a página carrega
+    window.addEventListener('load', () => {
+      displayTerminalLines();
+    });
+  </script>
 </body>
 </html>

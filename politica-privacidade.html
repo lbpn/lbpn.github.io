@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Calculadora de Combustível</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --border-color: #e2e8f0;
+            --accent-badge: #e0f2fe;
+            --accent-badge-text: #0369a1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --primary: #38bdf8;
+                --primary-dark: #0ea5e9;
+                --border-color: #334155;
+                --accent-badge: #1e3a5f;
+                --accent-badge-text: #7dd3fc;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 36px 32px 24px;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to bottom, rgba(2, 132, 199, 0.04), transparent);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-badge);
+            color: var(--accent-badge-text);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        section {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 4px 8px 8px 4px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 24px 32px;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .actions {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none !important;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge">Privacidade e Transparência</span>
+            <h1>Política de Privacidade</h1>
+            <p class="meta"><strong>Aplicativo:</strong> Calculadora de Combustível &bull; <strong>Desenvolvedor:</strong> LBPN &bull; <strong>Última atualização:</strong> 2026</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <p>Bem-vindo à Política de Privacidade do aplicativo <strong>Calculadora de Combustível</strong>, desenvolvido por <strong>LBPN</strong>. Esta página informa sobre nossas políticas relativas à coleta, uso e divulgação de informações de usuários.</p>
+            </section>
+
+            <section>
+                <h2>1. Coleta e Uso de Informações</h2>
+                <p>O aplicativo <strong>Calculadora de Combustível</strong> foi projetado para respeitar a privacidade dos usuários. O aplicativo <strong>não coleta, não armazena e não transmite</strong> informações de identificação pessoal (como nome, endereço de e-mail, lista de contatos ou localização GPS em tempo real).</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Dados Inseridos pelo Usuário:</strong> Todas as informações fornecidas para os cálculos (distância, consumo médio, preços de combustíveis, paradas e velocidades) são processadas exclusivamente na memória local do seu dispositivo e não são enviadas para servidores externos.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>2. Conexão à Internet e Serviços de Terceiros (Anúncios)</h2>
+                <p>Para manter o aplicativo gratuito para todos os usuários, utilizamos serviços de publicidade fornecidos por terceiros:</p>
+                <ul>
+                    <li><strong>Google AdMob:</strong> O aplicativo integra o SDK do Google AdMob para exibição de anúncios. O Google AdMob pode coletar e processar identificadores técnicos do dispositivo (como o ID de Publicidade do Google - AAID), endereço IP e dados gerais de desempenho da rede e do aplicativo para veiculação de anúncios.</li>
+                </ul>
+                <p>O tratamento desses dados é regido pelas diretrizes de privacidade do próprio Google. Para saber mais sobre como o Google gerencia os dados de anúncios, consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>.</p>
+            </section>
+
+            <section>
+                <h2>3. Compartilhamento de Dados</h2>
+                <p>Nós <strong>não vendemos, alugamos nem compartilhamos</strong> dados pessoais de nossos usuários com terceiros. A única transmissão de dados de rede que ocorre no aplicativo é estritamente vinculada à exibição de anúncios pelo Google AdMob, conforme detalhado na seção anterior.</p>
+            </section>
+
+            <section>
+                <h2>4. Segurança e Retenção</h2>
+                <p>Valorizamos a sua confiança. Como os dados de cálculo não são salvos em nenhum banco de dados em nuvem, você tem total controle sobre suas informações. Ao fechar o aplicativo ou limpar os campos, os dados processados temporariamente na memória são descartados.</p>
+            </section>
+
+            <section>
+                <h2>5. Privacidade de Crianças</h2>
+                <p>Nosso aplicativo não é direcionado a crianças menores de 13 anos de idade e não coletamos intencionalmente dados pessoais identificáveis de crianças.</p>
+            </section>
+
+            <section>
+                <h2>6. Alterações nesta Política</h2>
+                <p>Podemos atualizar nossa Política de Privacidade de tempos em tempos. Quaisquer alterações serão publicadas diretamente nesta página. Recomendamos que você revise esta página periodicamente.</p>
+            </section>
+
+            <section>
+                <h2>7. Contato e Suporte</h2>
+                <p>Se você tiver alguma dúvida, sugestão ou preocupação sobre esta Política de Privacidade ou sobre o aplicativo, entre em contato conosco:</p>
+                <ul>
+                    <li><strong>E-mail de Suporte:</strong> <a href="mailto:lbpn.suporte@gmail.com">lbpn.suporte@gmail.com</a></li>
+                    <li><strong>Desenvolvedor:</strong> LBPN</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 LBPN &bull; Todos os direitos reservados.</p>
+            <div class="actions">
+                <a href="https://play.google.com/store/apps/details?id=br.com.lbpn.calculadora.combustivel" target="_blank" rel="noopener noreferrer" class="btn">Ver na Google Play Store</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
